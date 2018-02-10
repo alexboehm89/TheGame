@@ -28,10 +28,9 @@ private:
 
     // Create list of unique cards
     void uniqueCards();
-    void getNumberOfCards();
 
     /***** Member *****/
-    uint_fast8_t m_number_of_cards;
+    unsigned m_number_of_cards;
     size_t m_number_of_attributes;
     size_t m_number_of_values;
     std::vector<std::string> m_card_attributes;

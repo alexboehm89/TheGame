@@ -9,7 +9,7 @@ CardDeck::CardDeck(std::vector<std::string> attributes, std::vector<std::string>
     m_number_of_attributes = m_card_attributes.size();
     m_number_of_values = m_card_values.size();
     uniqueCards();
-    getNumberOfCards();
+    m_number_of_cards = m_unique_cards.size();
 }
 
 CardDeck::~CardDeck()
@@ -42,10 +42,4 @@ void CardDeck::uniqueCards()
             m_unique_cards.push_back(current_card);
         }
     }
-}
-
-void CardDeck::getNumberOfCards()
-{
-    m_number_of_cards = m_unique_cards.size();
-    std::cout << m_number_of_cards << "|" << m_unique_cards.size() << std::endl;
 }
