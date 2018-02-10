@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <vector>
 #include <string>
+#include <array>
 
 class CardDeck
 {
@@ -23,12 +24,19 @@ public:
     // Draw a card from deck
     void draw();
 
+private:
+
+    // Create list of unique cards
+    void uniqueCards();
+    void getNumberOfCards();
+
     /***** Member *****/
-    uint_fast8_t m_amount_of_cards;
-    size_t m_amount_of_attributes;
-    size_t m_amount_of_numbers;
+    uint_fast8_t m_number_of_cards;
+    size_t m_number_of_attributes;
+    size_t m_number_of_values;
     std::vector<std::string> m_card_attributes;
-    std::vector<std::string> m_card_numbers;
+    std::vector<std::string> m_card_values;
+    std::vector<std::array<std::string, 2> > m_unique_cards;
 
 
 };

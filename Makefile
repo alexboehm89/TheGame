@@ -7,9 +7,9 @@ all : $(PROG)
 
 $(PROG) : $(OBJS)
 	$(CC) -o $(PROG) $(OBJS) 
-main.o :
+main.o : src/main.cpp 
 	$(CC) $(CPPFLAGS) -c src/main.cpp
-card_deck.o :
+card_deck.o : src/card_deck.cpp include/card_deck.h
 	$(CC) $(CPPFLAGS) -c src/card_deck.cpp
 
 clean :
