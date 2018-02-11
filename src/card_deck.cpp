@@ -10,6 +10,7 @@ CardDeck::CardDeck(std::vector<std::string> attributes, std::vector<std::string>
     m_number_of_values = m_card_values.size();
     uniqueCards();
     m_number_of_cards = m_unique_cards.size();
+    m_current_card_deck = m_unique_cards;
 }
 
 CardDeck::~CardDeck()
@@ -18,17 +19,27 @@ CardDeck::~CardDeck()
 
 void CardDeck::shuffle()
 {
-    std::cout << "Number of cards: " << m_number_of_cards << std::endl;
-    std::cout << "Number of attributes: " << m_number_of_attributes << std::endl;
-    std::cout << "Number of values: " << m_number_of_values << std::endl;
-
+    std::vector<std::array<std::string, 2> > aux_card_deck;
+    while (m_current_card_deck.size() != 0)
+    {
+        // Initalize random number generator
+        srand(clock());
+        // Get random vector element
+        int random_index = rand() % m_current_card_deck.size();
+        // Copy card new deck
+        aux_card_deck.push_back(m_current_card_deck[random_index]);
+        // Delete that card from curent deck
+        m_current_card_deck.erase(m_current_card_deck.begin() + random_index);
+    }
+    m_current_card_deck = aux_card_deck;
 }
 
 void CardDeck::draw()
 {
-    for (auto const& i_unique_cards: m_unique_cards)
+    std::cout << "##########################" << std::endl;
+    for (auto const& i_card: m_current_card_deck)
     {
-        std::cout << i_unique_cards[0]  << " " << i_unique_cards[1] << std::endl;
+        std::cout << i_card[0]  << " " << i_card[1] << std::endl;
     }
 }
 

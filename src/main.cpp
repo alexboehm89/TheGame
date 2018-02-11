@@ -9,4 +9,6 @@ int main (int argc, char **argv)
     CardDeck card_deck(attributes, values);
     card_deck.shuffle();
     card_deck.draw();
+    card_deck.shuffle();
+    card_deck.draw();
 }

@@ -7,6 +7,8 @@
 #include <vector>
 #include <string>
 #include <array>
+#include <stdlib.h>
+#include <time.h>
 
 class CardDeck
 {
@@ -36,6 +38,7 @@ private:
     std::vector<std::string> m_card_attributes;
     std::vector<std::string> m_card_values;
     std::vector<std::array<std::string, 2> > m_unique_cards;
+    std::vector<std::array<std::string, 2> > m_current_card_deck;
 
 
 };
