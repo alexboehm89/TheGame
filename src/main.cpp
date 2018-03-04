@@ -1,14 +1,20 @@
 // Main file for the Game
-#include "card_deck.h"
+#include "deck.h"
+#include "card.h"
 
 int main (int argc, char **argv)
 {
-    std::vector<std::string> attributes = {"Hearts", "Diamonds", "Spades", "Clubs"};
-    std::vector<std::string> values = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
-                                        "Jack", "Queen", "King", "Ace"};
-    CardDeck card_deck(attributes, values);
-    card_deck.shuffle();
-    card_deck.draw();
-    card_deck.shuffle();
-    card_deck.draw();
+    Deck deck(98);
+    deck.shuffle();
+    deck.show();
+
+    Card card;
+
+    std::cout << "A card is drawn" << std::endl;
+    card = deck.draw();
+    card.show();
+    std::cout << "The deck is shown" << std::endl;
+
+    deck.show();
+
 }
