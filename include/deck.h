@@ -23,6 +23,7 @@ public:
     void shuffle();
     Card draw();
     void show();
+    unsigned get_number_of_cards();
 
 private:
 

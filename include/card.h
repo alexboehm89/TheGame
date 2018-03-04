@@ -15,6 +15,7 @@ public:
 
     /****** Methods *****/
     void show();
+    unsigned get_value();
 
 private:
     unsigned m_value;

@@ -14,5 +14,10 @@ Card::~Card()
 
 void Card::show()
 {
-    std::cout << m_value << std::endl;
+    std::cout << "Card value is: " << m_value << std::endl;
+}
+
+unsigned Card::get_value()
+{
+    return m_value;
 }

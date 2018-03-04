@@ -5,10 +5,11 @@ Deck::Deck(unsigned number_of_cards)
     m_number_of_cards = number_of_cards;
     
     // Create a list of all cards
-    for (unsigned idx = 1; idx != number_of_cards ; idx++)
+    for (unsigned value = 2; m_cards.size() != number_of_cards; ++value)
     {
-        m_cards.push_back(idx + 1);
+        m_cards.push_back(value);
     }
+    std::cout << "size: " << m_cards.size() << std::endl;
     
     m_curent_cards = m_cards;
 }
@@ -53,6 +54,12 @@ Card Deck::draw()
     Card m_card(m_curent_cards[0]);
     // Delete card from deck
     m_curent_cards.erase(m_curent_cards.begin());
+    m_number_of_cards--;
 
     return m_card;
+}
+
+unsigned Deck::get_number_of_cards()
+{
+    return m_number_of_cards;
 }
