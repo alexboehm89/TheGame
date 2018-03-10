@@ -5,23 +5,16 @@
 
 int main (int argc, char **argv)
 {
-    std::cout << "Creating deck..." << std::endl;
+    std::cout << "########## Initializing The Game! ########## " << std::endl;
+    std::cout << "Creating deck ..." << std::endl;
     Deck deck(98);
     deck.shuffle();
-    deck.show();
+    std::cout << "Creating stacks ..." << std::endl;
+    Stack stack_up_1(1, "up");
+    Stack stack_up_2(1, "up");
+    Stack stack_down_1(100, "down");
+    Stack stack_down_2(100, "down");
 
     Card card;
-    Stack stack(100, "down");
-
-    while (deck.get_number_of_cards() != 0)
-    {
-        card = deck.draw();
-        stack.add(card);
-    }
-    
-    std::cout << "Show deck..." << std::endl;
-    deck.show();
-    std::cout << "Show stack..." << std::endl;
-    stack.show();
 
 }

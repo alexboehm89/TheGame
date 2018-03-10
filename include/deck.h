@@ -21,17 +21,14 @@ public:
 
     /***** Methods *****/
     void shuffle();
-    Card draw();
+    std::vector<unsigned> draw(unsigned);
     void show();
     unsigned get_number_of_cards();
 
 private:
 
     /***** Member *****/
-    unsigned m_number_of_cards;
-    Card m_card;
     std::vector<unsigned> m_cards;
-    std::vector<unsigned> m_curent_cards;
 
 };
 

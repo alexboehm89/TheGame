@@ -5,13 +5,13 @@
 #include <vector>
 #include <iostream>
 
-#include <card.h>
+#include "card.h"
 
 class Stack
 {
 public:
     // Constructor
-Stack(unsigned, std::string);
+    Stack(unsigned, std::string);
 
     // Destructor
     ~Stack();
