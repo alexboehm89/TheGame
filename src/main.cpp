@@ -2,6 +2,7 @@
 #include "deck.h"
 #include "stack.h"
 #include "card.h"
+#include "player.h"
 
 int main (int argc, char **argv)
 {
@@ -14,6 +15,11 @@ int main (int argc, char **argv)
     Stack stack_up_2(1, "up");
     Stack stack_down_1(100, "down");
     Stack stack_down_2(100, "down");
+
+    std::cout << "Creating player ..." << std::endl;
+    Player player("player1");
+    player.show_name();
+
 
     Card card;
 

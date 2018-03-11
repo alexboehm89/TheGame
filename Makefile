@@ -1,7 +1,7 @@
 PROG    = TheGame
 CC      = g++
 CPPFLAGS = -g -Wall -I./include -std=c++11
-OBJS = main.o deck.o stack.o card.o
+OBJS = main.o deck.o stack.o card.o player.o
 
 all : $(PROG)
 
@@ -15,6 +15,8 @@ stack.o : src/stack.cpp include/stack.h
 	$(CC) $(CPPFLAGS) -c src/stack.cpp
 card.o : src/card.cpp include/card.h
 	$(CC) $(CPPFLAGS) -c src/card.cpp
+player.o : src/player.cpp include/player.h
+	$(CC) $(CPPFLAGS) -c src/player.cpp
 
 clean :
 	rm -f core $(PROG) $(OBJS)

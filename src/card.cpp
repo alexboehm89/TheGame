@@ -3,6 +3,7 @@
 Card::Card()
 {
 }
+
 Card::Card(unsigned value)
 {
     m_value = value;

@@ -21,7 +21,7 @@ public:
     void show_remaining_cards();
     void show_name();
     void play_card(Stack, Card);
-    void draw(Deck, unsigned)
+    void draw(Deck, unsigned);
 
 private:
 
@@ -29,6 +29,6 @@ private:
     std::string m_name;
     std::vector<unsigned> m_cards;
 
-}
+};
 
 #endif // PLAYER_H
