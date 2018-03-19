@@ -5,7 +5,9 @@ Deck::Deck(unsigned number_of_cards)
     // Create a list of all cards
     for (unsigned value = 2; m_cards.size() != number_of_cards; ++value)
     {
-        m_cards.push_back(value);
+        Card new_card(value);
+        //std::cout << value << std::endl;
+        m_cards.push_back(new_card);
     }
 }
 
@@ -17,9 +19,9 @@ void Deck::show()
 {
     if (m_cards.size() != 0)
     {
-        for (auto const& i_card : m_cards)
+        for (auto i_card : m_cards)
         {
-            std::cout << i_card << std::endl;
+            std::cout << i_card.get_value() << std::endl;
         }
     } else
     {
@@ -28,7 +30,7 @@ void Deck::show()
 }
 void Deck::shuffle()
 {
-    std::vector<unsigned> aux_deck;
+    std::vector<Card> aux_deck;
     while (m_cards.size() != 0)
     {
         // Initalize random number generator
@@ -43,10 +45,10 @@ void Deck::shuffle()
     m_cards = aux_deck;
 }
 
-std::vector<unsigned> Deck::draw(unsigned requested_cards)
+std::vector<Card> Deck::draw(unsigned requested_cards)
 {
     // Draw cards
-    std::vector<unsigned> drawn_cards;
+    std::vector<Card> drawn_cards;
     while (drawn_cards.size() != requested_cards)
     {
         // Add card 

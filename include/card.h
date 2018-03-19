@@ -7,18 +7,17 @@ class Card
 {
 public:
     // Constructor
-    Card();
     Card(unsigned);
 
     // Destructor
     ~Card();
 
     /****** Methods *****/
-    void show();
+    void show_value();
     unsigned get_value();
 
 private:
-    unsigned m_value;
+    const unsigned m_value;
 };
 
 

@@ -23,9 +23,9 @@ public:
 private:
 
     /***** Member *****/
-    std::string m_direction;
-    unsigned m_starting_point;
-    std::vector<unsigned> m_current_cards;
+    const std::string m_direction;
+    const unsigned m_starting_point;
+    std::vector<Card> m_current_cards;
 
 };
 

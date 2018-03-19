@@ -9,7 +9,8 @@ int main (int argc, char **argv)
     std::cout << "########## Initializing The Game! ########## " << std::endl;
     std::cout << "Creating deck ..." << std::endl;
     Deck deck(98);
-    deck.shuffle();
+    //deck.shuffle();
+    deck.show();
     std::cout << "Creating stacks ..." << std::endl;
     Stack stack_up_1(1, "up");
     Stack stack_up_2(1, "up");
@@ -19,8 +20,5 @@ int main (int argc, char **argv)
     std::cout << "Creating player ..." << std::endl;
     Player player("player1");
     player.show_name();
-
-
-    Card card;
-
+    player.draw(deck, 5);
 }
