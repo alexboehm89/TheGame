@@ -17,7 +17,7 @@ public:
     unsigned get_value();
 
 private:
-    const unsigned m_value;
+    unsigned m_value;
 };
 
 

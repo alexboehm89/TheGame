@@ -57,7 +57,7 @@ std::vector<Card> Deck::draw(unsigned requested_cards)
         m_cards.erase(m_cards.begin());
     }
 
-    return m_cards;
+    return drawn_cards;
 }
 
 unsigned Deck::get_number_of_cards()

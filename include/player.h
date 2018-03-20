@@ -11,7 +11,6 @@ class Player
 {
 public:
     // Constructor
-    Player();
     Player(std::string);
 
     // Destructor
@@ -27,7 +26,7 @@ private:
 
     /***** Member *****/
     std::string m_name;
-    std::vector<unsigned> m_cards;
+    std::vector<Card> m_cards;
 
 };
 
