@@ -32,11 +32,32 @@ int main (int argc, char **argv)
 
     std::cout << "########## Initializing The Game! ########## " << std::endl;
     std::cout << "Creating deck ..." << std::endl;
-    Deck deck(98);
+    unsigned number_of_cards = 98;
+    Deck deck(number_of_cards);
     deck.shuffle();
     std::cout << "Creating stacks ..." << std::endl;
     Stack stack_up_1(1, "up");
     Stack stack_up_2(1, "up");
     Stack stack_down_1(100, "down");
     Stack stack_down_2(100, "down");
+
+    /***** GAME LOOP *****/
+    std::cout << "The Game starts!" << std::endl;
+    int remaining_cards = number_of_cards;
+    const unsigned max_number_hold_cards = 7;
+    while (remaining_cards != 0) {
+        for (auto i_player : players) {
+            // Show all stacks 
+            stack_up_1.show();
+            stack_up_2.show();
+            stack_down_1.show();
+            stack_down_2.show();
+            // Show hold cards
+            i_player.draw(deck, 10);
+            i_player.show_remaining_cards();
+            std::cout << deck.get_number_of_cards() << std::endl;
+            return 0;
+
+        }
+    }
 }

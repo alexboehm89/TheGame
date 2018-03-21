@@ -20,7 +20,9 @@ public:
     void show_remaining_cards();
     void show_name();
     void play_card(Stack&, unsigned);
-    void draw(Deck, unsigned);
+    void draw(Deck&, unsigned);
+    Card get_highest_card();
+    Card get_lowest_card();
 
 private:
 

@@ -46,7 +46,7 @@ void Player::play_card(Stack& stack, unsigned value)
     }
 }
 
-void Player::draw(Deck deck, unsigned number_of_cards)
+void Player::draw(Deck& deck, unsigned number_of_cards)
 {
     // Draw cards from deck
     if (deck.get_number_of_cards() >= number_of_cards)
@@ -55,5 +55,41 @@ void Player::draw(Deck deck, unsigned number_of_cards)
         std::vector<Card> drawn_cards = deck.draw(number_of_cards);
         // Add to holding cards
         m_cards.insert(std::end(m_cards), std::begin(drawn_cards), std::end(drawn_cards));
+    }
+}
+
+// TODO: Differentiate between value and card!!!!!
+// Rework needed!!
+Card Player::get_highest_card()
+{
+    if (!m_cards.empty()) {
+        unsigned high_value = 1;
+        for (unsigned idx = 0; idx != m_cards.size(); idx++) {
+            if (m_cards[idx].get_value() > high_value) {
+                high_value =  m_cards[idx].get_value();
+            }
+        }
+        Card high_card(high_value);
+        return high_card;
+    } else {
+        std::cout << m_name << " does not hold any cards! Returned -1" << std::endl;
+        return -1;
+    }
+}
+
+Card Player::get_lowest_card()
+{
+    if (!m_cards.empty()) {
+        unsigned low_value = 99;
+        for (unsigned idx = 0; idx != m_cards.size(); idx++) {
+            if (m_cards[idx].get_value() < low_value) {
+                low_value =  m_cards[idx].get_value();
+            }
+        }
+        Card low_card(low_value);
+        return low_card;
+    } else {
+        std::cout << m_name << " does not hold any cards! Returned -1" << std::endl;
+        return -1;
     }
 }
