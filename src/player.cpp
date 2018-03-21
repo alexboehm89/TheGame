@@ -29,15 +29,19 @@ void Player::show_name()
     std::cout << "Name of player: " << m_name << std::endl;
 }
 
-void Player::play_card(Stack stack, unsigned value)
+void Player::play_card(Stack& stack, unsigned value)
 {
     // Find card with given value
-    for (unsigned idx; idx != m_cards.size(); idx++) {
+    for (unsigned idx = 0; idx != m_cards.size(); idx++) {
         if (m_cards[idx].get_value() == value) {
             // Add card to stack
             stack.add(m_cards[idx]);
             // Remove card from hand
             m_cards.erase(m_cards.begin() + idx);
+            break;
+        }
+        if (idx == m_cards.size()-1) {
+            std::cout << m_name << " does not have a card with value " << value << std::endl;
         }
     }
 }

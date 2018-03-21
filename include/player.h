@@ -19,7 +19,7 @@ public:
     /***** Methods *****/
     void show_remaining_cards();
     void show_name();
-    void play_card(Stack, unsigned);
+    void play_card(Stack&, unsigned);
     void draw(Deck, unsigned);
 
 private:
